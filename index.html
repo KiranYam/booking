@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function validateForm() {
+          var fromfield = document.forms["myForm"]["from"].value;
+          if (fromfield == "" || fromfield == null) {
+            alert("From field details must be filled out");
+            return false;
+          }
+
+          var tofield = document.forms["myForm"]["to"].value;
+          if (tofield == "" || tofield == null) {
+            alert("To field details must be filled out");
+            return false;
+          }
+          var p1namefield = document.forms["myForm"]["p1name"].value;
+          if (p1namefield.length > 5) {
+            alert("Passenger-1 name cannot be more than 5");
+            return false;
+          }
+          var p2namefield = document.forms["myForm"]["p2name"].value;
+          if (p2namefield.length > 5) {
+            alert("Passenger-2 name cannot be more than 5");
+            return false;
+          }
+
+          var emailfield = document.forms["myForm"]["email"].value;
+          if (emailfield == "" || emailfield == null) {
+            alert("Email field cannot be empty");
+            return false;
+          }
+
+          var mobilefield = document.forms["myForm"]["mobile"].value;
+          if (mobilefield == "" || mobilefield == null) {
+            alert("Mobile field cannot be empty");
+            return false;
+          }
+        }
+    </script>
+</head>
+<body>
+<form name="myForm" action="./index.html" onsubmit="return validateForm()" method="post" required>
+<h1>Booking Details</h1>
+
+
+<div>
+<input type="radio" id="oneway" name="one" value="oneway" checked>
+<label for="oneway">One Way</label>
+<input type="radio" id="roundtrip" name="one" value="roundtrip">
+<label for="roundtrip">Round Trip</label><br>
+</div>
+
+<div>
+    <label for="name">From :</label>
+    <input type="text" id="from" name="from" > 
+    <label for="name">To :</label>
+    <input type="text" id="to" name="to" > <br>
+</div>
+
+<div>
+    <label for="departure">Departure Date :</label>
+    <input type="date" id="departure" name="trip-departure" value="2022-07-10" min="2022-01-01" max="2022-12-31">
+    <label for="return">Return Date :</label>
+    <input type="date" id="return" name="trip-return" value="2022-07-22" min="2022-01-01" max="2022-12-31">
+</div>
+<h3>Number of Passengers</h3>
+<div>
+    <label for="adults">Adults :</label>
+    <input type="text" id="adults" name="adults" > 
+    <label for="children">To :</label>
+    <input type="text" id="children" name="children" > <br>
+</div>
+<h4>Passenger 1</h4>
+<div>
+    <label for="p1name">Name :</label>
+    <input type="text" id="p1name" name="p1name" > 
+    <label for="p1age">Age :</label>
+    <input type="number" id="p1age" name="p1age" > 
+
+    <label for="gender">Gender :</label>
+    <input type="radio" id="p1male" name="one" value="p1male" checked>
+    <label for="p1male">Male</label>
+    <input type="radio" id="p1female" name="one" value="p1female">
+    <label for="p1female">Female</label><br>
+</div>
+<h4>Passenger 2</h4>
+<div>
+    <label for="p2name">Name :</label>
+    <input type="text" id="p2name" name="p2name" > 
+    <label for="number">Age :</label>
+    <input type="text" id="p2age" name="p2age" > 
+
+    <label for="gender">Gender :</label>
+    <input type="radio" id="p2male" name="one" value="p2male" checked>
+    <label for="p2male">Male</label>
+    <input type="radio" id="p2female" name="one" value="p2female">
+    <label for="p2female">Female</label><br>
+</div>
+
+<h4>Passenger 3</h4>
+<div>
+    <label for="p3name">Name :</label>
+    <input type="text" id="p3name" name="p3name" > 
+    <label for="p3age">Age :</label>
+    <input type="text" id="p3age" name="p3age" > 
+
+    <label for="gender">Gender :</label>
+    <input type="radio" id="p3male" name="one" value="p3male" >
+    <label for="p3male">Male</label>
+    <input type="radio" id="p3female" name="one" value="p3female">
+    <label for="p3female">Female</label><br>
+</div>
+<div>
+    <label for="foodtype">Food Type:</label>
+  <select id="foodtype" name="foodtype">
+    <option value="roti">Roti Wrap</option>
+    <option value="burger">Chicken Burger</option>
+    <option value="salad">Ceaser Salad</option>
+    <option value="fruits">Fruit Salad</option>
+  </select>
+
+  <label for="travelclass">Food Type:</label>
+  <select id="travelclass" name="travelclass">
+    <option value="economy">Economy</option>
+    <option value="business">Business</option>
+    <option value="first">First Class</option>
+    <option value="crew">Crew</option>
+  </select>
+</div>
+
+<h4>Payment Details</h4>
+<div>
+    <label for="fullname">Full Name :</label>
+    <input type="text" id="fullname" name="fullname" > 
+    <label for="email">Email :</label>
+    <input type="text" id="email" name="email" > 
+    <label for="mobile">Mobile :</label>
+    <input type="number" id="mobile" name="mobile" > 
+</div>
+
+<input type="submit">
+    </form>
+</body>
+</html>
